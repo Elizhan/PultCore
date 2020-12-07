@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Style\icon\close-window.png" />
+    <None Remove="Style\icon\move-left.png" />
+    <None Remove="Style\icon\rck.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Style\icon\close-window.png" />
+    <Resource Include="Style\icon\move-left.png" />
+    <Resource Include="Style\icon\rck.png" />
+  </ItemGroup>
+
+</Project>
