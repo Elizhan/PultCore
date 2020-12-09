@@ -319,14 +319,14 @@
                             </Grid.Effect>
                             <!--Язык-->
                             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                <Button Style="{DynamicResource BtnLng}" Content="RU"/>
-                                <Button Style="{DynamicResource BtnLng}" Content="KG"/>
-                                <Button Style="{DynamicResource BtnLng}" Content="ENG"/>
+                                <Button Style="{DynamicResource BtnLng}" Content="RU" Click="Button_Click_1"/>
+                                <Button Style="{DynamicResource BtnLng}" Content="KG" Click="Button_Click_2"/>
+                                <Button Style="{DynamicResource BtnLng}" Content="ENG" Click="Button_Click_3"/>
                             </StackPanel>
 
                             <Button Grid.Column="2" Content="X" Style="{DynamicResource BtnForm}" Background="#FFBD1313" Click="Button_Click"/>
-                            <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="20 0 0 0">
-                                <TextBlock Text="Окно №" FontSize="19" TextWrapping="Wrap" FontWeight="Bold" Foreground="White" 
+                            <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="10 0 0 0">
+                                <TextBlock x:Name="WindowNambe" Text="Окно №" FontSize="19" TextWrapping="Wrap" FontWeight="Bold" Foreground="White" 
                        VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent"/>
                                 <TextBlock Margin="10 0 0 0" Text="7" FontSize="22" TextWrapping="Wrap" FontWeight="Bold" Foreground="White" 
                        VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent"/>
@@ -348,17 +348,31 @@
                                 <!--Лист Список Ожидания-->
                                 <Grid Grid.Row="1">
                                     <StackPanel Orientation="Vertical" Width="{Binding Width, ElementName=GridPanel}" VerticalAlignment="Top">
-                                        <Button Panel.ZIndex="1" Style="{DynamicResource BtnOchered}" x:Name="Button1" Height="40" Content="Ожидание (10)" Click="Button1_Click">
+                                        <Button Panel.ZIndex="1" Style="{DynamicResource BtnOchered}" x:Name="Button1" Height="40" Click="Button1_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock x:Name="OzidanieBtn" Text="Ожидаюшие"/>
+                                                <TextBlock Margin="10 0 0 0" Text="10"/>
+                                            </StackPanel>
                                             <Button.Effect>
                                                 <DropShadowEffect BlurRadius="10" Direction="250" ShadowDepth="1"/>
                                             </Button.Effect>
                                         </Button>
                                         <ListBox  x:Name="List1" Visibility="Hidden">
-                                            <ListBoxItem>
-
-                                            </ListBoxItem>
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock />
+                                                        <TextBlock />
+                                                        <TextBlock />
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
                                         </ListBox>
-                                        <Button Panel.ZIndex="1" Style="{DynamicResource BtnOchered}" x:Name="Button2" Height="40" Content="Очеред (30)" Click="Button2_Click">
+                                        <Button Panel.ZIndex="1" Style="{DynamicResource BtnOchered}" x:Name="Button2" Height="40" Click="Button2_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock x:Name="OcheredBtn" Text="Очередь"/>
+                                                <TextBlock Margin="10 0 0 0" Text="10"/>
+                                            </StackPanel>
                                             <Button.Effect>
                                                 <DropShadowEffect BlurRadius="10" Direction="250" ShadowDepth="1"/>
                                             </Button.Effect>
@@ -444,7 +458,15 @@
                                 <!--нижная-->
                                 <Grid Grid.Row="3" Margin="0 5 0 0">
                                     <StackPanel Orientation="Vertical">
-                                        <ComboBox Style="{DynamicResource ComboBoxStyle1}" Height="25" HorizontalAlignment="Center" Width="270"/>
+                                        <ComboBox Style="{DynamicResource ComboBoxStyle1}" Height="25" HorizontalAlignment="Center" Width="270">
+                                            <ComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel>
+                                                        
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </ComboBox.ItemTemplate>
+                                        </ComboBox>
                                         <Button Grid.Row="1" x:Name="Perevod" Style="{DynamicResource ButtonNext}" Tag="Перенаправить"
                                     Height="35" Margin="5"/>
                                     </StackPanel>

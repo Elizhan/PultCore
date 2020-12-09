@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace PultCore
 {
@@ -26,7 +27,8 @@ namespace PultCore
             var desctop = System.Windows.SystemParameters.WorkArea;
             this.Left = desctop.Right - (this.Width);
             this.Top = desctop.Bottom - (this.Height);
-
+             
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -78,6 +80,52 @@ namespace PultCore
                 List2.Height = 0;
                 List2.Visibility = Visibility.Hidden;
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            WindowNambe.Text = "Окно №";
+            OzidanieBtn.Text = "Ожидаюшие";
+            OcheredBtn.Text = "Очередь";
+            NextBtnPesr.Tag = "Следуюший";
+            Pause.Tag = "Пауза";
+            Next.Tag = "Начать Обслуживание";
+            Vyzov.Tag = "Вызов";
+            Kassa.Tag = "На кассу";
+            AndBtn.Tag = "Завершить";
+            Otlozhit.Tag = "Отложить";
+            Perevod.Tag = "Перенаправить";
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            WindowNambe.Text = "Терезе №";
+            OzidanieBtn.Text = "Кутуучулор";
+            OcheredBtn.Text = "кутудо";
+            NextBtnPesr.Tag = "Кийинки";
+            Pause.Tag = "Тыным";
+            Next.Tag = "Тейлеп Баштоо";
+            Vyzov.Tag = "Чакыруу";
+            Kassa.Tag = "Кассага";
+            AndBtn.Tag = "Бутуруу";
+            Otlozhit.Tag = "Кутууго койуу";
+            Perevod.Tag = "Которуу";
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            WindowNambe.Text = "Window №";
+            WindowNambe.FontSize = 17;
+            OzidanieBtn.Text = "Pending";
+            OcheredBtn.Text = "Turn";
+            NextBtnPesr.Tag = "Following";
+            Pause.Tag = "Pause";
+            Next.Tag = "Start Service";
+            Vyzov.Tag = "Call";
+            AndBtn.Tag = "To complete";
+            Kassa.Tag = "To the checkout";
+            Otlozhit.Tag = "Postpone";
+            Perevod.Tag = "Redirect";
         }
     }
 }
